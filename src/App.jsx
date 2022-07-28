@@ -5,7 +5,7 @@ class App extends Component {
   state = { foods: getFoods() };
   render() {
     return (
-      <div>
+      <div className="container">
         <p>Showing {this.state.foods.length} foods in the database</p>
         <table className="table">
           <thead>
