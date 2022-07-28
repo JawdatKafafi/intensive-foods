@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/intensive-foods/static/css/main.c25aa6b5.css",
+    "main.js": "/intensive-foods/static/js/main.5410f424.js",
+    "index.html": "/intensive-foods/index.html",
+    "main.c25aa6b5.css.map": "/intensive-foods/static/css/main.c25aa6b5.css.map",
+    "main.5410f424.js.map": "/intensive-foods/static/js/main.5410f424.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c25aa6b5.css",
+    "static/js/main.5410f424.js"
+  ]
+}
