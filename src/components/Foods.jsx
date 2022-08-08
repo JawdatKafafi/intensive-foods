@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { getFoods } from "../Services/fakeFoodService";
 import Favorite from "./common/Favorite";
+import Pagination from "./common/Pagination";
 class Foods extends Component {
   state = {
     foods: getFoods(),
+    pageSize: 4,
   };
 
   handleFavor = (food) => {
@@ -58,6 +60,7 @@ class Foods extends Component {
             ))}
           </tbody>
         </table>
+        <Pagination itemCount={count} pageSize={this.state.pageSize} />
       </div>
     );
   }
