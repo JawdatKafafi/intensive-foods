@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import { getFoods } from "../Services/fakeFoodService";
+import Favorite from "./common/Favorite";
 class Foods extends Component {
   state = {
     foods: getFoods(),
+  };
+
+  handleFavor = (food) => {
+    const foods = [...this.state.foods];
+    const index = foods.indexOf(food);
+    foods[index] = { ...food };
+    foods[index].isFavorite = !foods[index].isFavorite;
+    this.setState({ foods });
   };
 
   render() {
@@ -20,6 +29,8 @@ class Foods extends Component {
               <th>Category</th>
               <th>Stocks</th>
               <th>Price</th>
+              <th />
+              <th />
             </tr>
           </thead>
           <tbody>
@@ -29,6 +40,12 @@ class Foods extends Component {
                 <td>{food.category.name}</td>
                 <td>{food.numberInStock}</td>
                 <td>{food.price}</td>
+                <td>
+                  <Favorite
+                    onFavor={() => this.handleFavor(food)}
+                    isFavorite={food.isFavorite}
+                  />
+                </td>
                 <td>
                   <button
                     onClick={() => this.handleDelete(food)}
