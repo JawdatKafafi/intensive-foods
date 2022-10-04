@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import Table from "./common/Table";
 import Favorite from "./common/Favorite";
+import { Link } from "react-router-dom";
 
 class FoodsTable extends Component {
   columns = [
-    { lable: "Name", path: "name" },
+    {
+      lable: "Name",
+      path: "name",
+      content: (food) => <Link to={`/food/${food._id}`}>{food.name}</Link>,
+    },
     { lable: "Category", path: "category.name" },
     { lable: "Stocks", path: "numberInStock" },
     { lable: "Price", path: "price" },
