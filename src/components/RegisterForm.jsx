@@ -24,7 +24,7 @@ class RegisterForm extends Form {
       email: this.state.data.username,
       password: this.state.data.password,
     };
-    await http.post("http://localhost:8000/api/users", data);
+    await http.post("http://localhost:8000/api/", data);
   };
 
   render() {
@@ -33,7 +33,7 @@ class RegisterForm extends Form {
         {this.renderInput("username", "Username")}
         {this.renderInput("password", "Password", "password")}
         {this.renderInput("name", "Name")}
-        {this.renderButton("Registrera")}
+        {this.renderButton("Register")}
       </form>
     );
   }

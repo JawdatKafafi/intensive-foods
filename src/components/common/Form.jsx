@@ -27,7 +27,7 @@ class Form extends Component {
 
     if (!error) return null;
 
-    return error.details[0].message;
+    return error.message;
   }
 
   handleChange = ({ target: input }) => {
@@ -44,7 +44,7 @@ class Form extends Component {
     e.preventDefault();
 
     const errors = this.validate();
-    this.setState({ errors });
+    this.setState({ errors: errors || {} });
     if (errors) return;
 
     this.doSubmit();
