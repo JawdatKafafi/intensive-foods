@@ -85,6 +85,7 @@ class Foods extends Component {
     );
 
     const foods = paginate(sortedFoods, selectedPage, pageSize);
+
     return { foods, filtredCount: filtredFoods.length };
   }
 
@@ -117,7 +118,7 @@ class Foods extends Component {
           <Link to="/foods/new" className="btn btn-primary mt-4">
             New Food
           </Link>
-          <p>Showing {filtredCount.length} foods in the database</p>
+          <p>Showing {filtredCount} foods in the database</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
           <FoodsTable
             foods={foods}
@@ -127,7 +128,7 @@ class Foods extends Component {
             sortColumn={sortColumn}
           />
           <Pagination
-            itemCount={filtredCount.length}
+            itemCount={filtredCount}
             pageSize={pageSize}
             selectedPage={selectedPage}
             onPageChange={this.handlePageChange}
